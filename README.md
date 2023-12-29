@@ -1,23 +1,30 @@
 # OpenAPI definition
 
+### est-app will provide authentication and authorization using access token
+### Framework 
+
+
  [Swagger UI](http://localhost:8080/app/swagger-ui/index.html)
  
  [H2 Database](http://localhost:8080/app/h2)   
-    
-## Version: v0
+ 
+### Main Frameworks    
+#### Spring Boot: 3.2.0
+#### Spring Security: 6.2.0  
+#### H2 Database: 2.2.224
 
-### /generate/token/{username}
 
-#### GET
-##### Summary:
+
+### /generate/token/{username} [GET]
+#### Generate JWT by name 
 
 Create token by name
 
-##### Parameters
+#### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| username | path |  | Yes | string |
+|   Name   |  Located in | Description | Required | Schema |
+|  ----    | ----------  | ----------- | -------- |  ----  |
+| username |    path     |             |    Yes   | string |
 
 ##### Responses
 
@@ -29,22 +36,23 @@ Create token by name
 | 422 | Unprocessable Entity |
 | 500 | Internal Server Error |
 
-### /api/users/test
-
+### /api/users/test [GET]
+Add header Authorization : Bearer abcdefg 
 #### GET
 ##### Responses
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
-| 404 | Not Found |
-| 422 | Unprocessable Entity |
-| 500 | Internal Server Error |
+| Code |      Description      |
+| ---- |      -----------      |
+| 200  |          OK           |
+| 404  |       Not Found       |
+| 422  |  Unprocessable Entity |
+| 500  |  Internal Server Error|
 
 ### /api/users/find
 
-#### GET
-##### Responses
+#### Get users
+Add header Authorization : Bearer abcdefg 
+#### Responses
 
 | Code | Description |
 | ---- | ----------- |
